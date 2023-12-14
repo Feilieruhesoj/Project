@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        /* Custom CSS to make buttons red and increase their size */
+        .custom-button {
+            background-color: rgb(224, 44, 44);
+            font-size: 20px;
+            margin: 12px;
+            padding: 6px 20px;
+            border-radius:5px;
+            border: 0px;
+            
+        }
+        .progress{
+            width: 500px;
+            height: 40px;
+            Background: #DDDDDD;
+            border-radius:5px;
+            overflow: hidden;
+
+        }
+        .progress__fill{
+            width:0%;
+            height: 100%;
+            background: #0079FF;
+
+        }
+        .progress__text{
+            font-family: Verdana, sans-serif;
+            color: white;
+            position:relative; 
+            left:150px; 
+            top:10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2 style="font-family: Verdana, sans-serif; font-size: 20px;">Progress Bar + Buttons with Event Listeners</h2>
+        <div class="progress">
+            <div id="progress-bar" class="progress__fill" role="progressbar">
+                <div id="progress-text" class="progress__text">0%</div>
+            </div>
+        </div>
+        
+        <button id="btn-33" class="btn btn-primary custom-button" style="color: white;">Set to 33%</button>
+        <button id="btn-66" class="btn btn-primary custom-button" style="color: white;">Set to 66%</button>
+        <button id="btn-100" class="btn btn-primary custom-button" style="color: white;">Set to 100%</button>
+
+
+    <script>
+        const progressBar = document.getElementById("progress-bar");
+        const progressTxt = document.getElementById("progress-text");
+        const btn33 = document.getElementById("btn-33");
+        const btn66 = document.getElementById("btn-66");
+        const btn100 = document.getElementById("btn-100");
+
+        btn33.addEventListener("click", () => {
+            progressBar.style.width = "33%";
+            progressTxt.innerHTML = "33%";
+        });
+
+        btn66.addEventListener("click", () => {
+            progressBar.style.width = "66%";
+            progressTxt.innerHTML = "66%";
+        });
+
+        btn100.addEventListener("click", () => {
+            progressBar.style.width = "100%";
+            progressTxt.innerHTML = "100%";
+        });
+    </script>
+</body>
+</html>
